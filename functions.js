@@ -1,3 +1,11 @@
+var input = document.querySelector('input');
+var button = document.querySelector('button');
+var userInput;
+button.addEventListener('click', function (e) {
+    e.preventDefault();
+    userInput = parseInt(input.value);
+});
+console.log(userInput);
 var numerals = [['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
     ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
     ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
@@ -18,8 +26,10 @@ var convertToNumerals = function (input, howManyDigits) {
     }
     return output.join('');
 };
+console.log;
 console.log(convertToNumerals(2341, 4));
-module.exports = {
-    digits: digits,
-    convertToNumerals: convertToNumerals
-};
+//commented out but uncomment for testing
+// module.exports = {
+//     digits,
+//     convertToNumerals
+// };

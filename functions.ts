@@ -1,3 +1,12 @@
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+let userInput: number;
+button.addEventListener('click', function(e){e.preventDefault();
+     userInput = parseInt(input.value);
+});
+
+console.log(userInput);
+
 const numerals: string[][] = [['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
                                 ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
                                 ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
@@ -21,10 +30,12 @@ const convertToNumerals = (input: number, howManyDigits: number): string=> {
     }
     return output.join('')
 }
-
+console.log
 console.log(convertToNumerals(2341, 4))
 
-module.exports = {
-    digits,
-    convertToNumerals
-};
+
+//commented out but uncomment for testing
+// module.exports = {
+//     digits,
+//     convertToNumerals
+// };
