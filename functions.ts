@@ -23,8 +23,13 @@ const convertToNumerals = (input: number, howManyDigits: number): string=> {
 }
 
 console.log(convertToNumerals(2341, 4))
+//
+// module.exports = {
+//     digits,
+//     convertToNumerals
+// };
 
-module.exports = {
+export default {
     digits,
     convertToNumerals
 };

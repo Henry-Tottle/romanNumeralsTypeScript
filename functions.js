@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var numerals = [['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
     ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
     ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
@@ -19,7 +21,12 @@ var convertToNumerals = function (input, howManyDigits) {
     return output.join('');
 };
 console.log(convertToNumerals(2341, 4));
-module.exports = {
+//
+// module.exports = {
+//     digits,
+//     convertToNumerals
+// };
+exports.default = {
     digits: digits,
     convertToNumerals: convertToNumerals
 };
