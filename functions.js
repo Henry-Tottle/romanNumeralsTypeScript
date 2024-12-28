@@ -6,8 +6,20 @@ var digits = function (input) {
     return input.toString().length;
 };
 var howManyDigits = digits(300);
-var convertToNumerals = function (input) {
-    return numerals[0][input - 1];
+var convertToNumerals = function (input, howManyDigits) {
+    var inputAsArray = input.toString().split('');
+    var count = howManyDigits;
+    var whichDigit = 0;
+    var output = [];
+    while (count > 0) {
+        output.push(numerals[count - 1][parseInt(inputAsArray[whichDigit]) - 1]);
+        whichDigit++;
+        count--;
+    }
+    return output.join('');
 };
-console.log(convertToNumerals(3));
-module.exports = digits;
+console.log(convertToNumerals(2341, 4));
+module.exports = {
+    digits: digits,
+    convertToNumerals: convertToNumerals
+};
