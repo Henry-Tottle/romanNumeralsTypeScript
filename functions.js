@@ -1,11 +1,12 @@
 var input = document.querySelector('input');
 var button = document.querySelector('button');
+var outputDiv = document.getElementById('output');
 var userInput;
 button.addEventListener('click', function (e) {
-    e.preventDefault();
     userInput = parseInt(input.value);
+    outputDiv.textContent = 'Your number converted to Roman Numerals is: ' + convertToNumerals(userInput, digits(userInput));
+    e.preventDefault();
 });
-console.log(userInput);
 var numerals = [['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
     ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
     ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
@@ -13,7 +14,6 @@ var numerals = [['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
 var digits = function (input) {
     return input.toString().length;
 };
-var howManyDigits = digits(300);
 var convertToNumerals = function (input, howManyDigits) {
     var inputAsArray = input.toString().split('');
     var count = howManyDigits;
@@ -26,10 +26,3 @@ var convertToNumerals = function (input, howManyDigits) {
     }
     return output.join('');
 };
-console.log;
-console.log(convertToNumerals(2341, 4));
-//commented out but uncomment for testing
-// module.exports = {
-//     digits,
-//     convertToNumerals
-// };
